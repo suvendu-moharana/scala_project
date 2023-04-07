@@ -2,12 +2,17 @@
 
 case class Person(fistname:String, lastname:String)
   object Person_list extends App{
-    val name = List(
-      Person("suvendu", "moharana"),
+    val names:List[String]=List("suvendu moharana","abinash shau","tapan ojha","chinmay jena","rajat senapati")
+    val name = names.map(x => {
+      val spl:Array[String] = x.split(" ")
+      Person(lastname = spl(1),fistname = spl(0))
+    })
+/*    val name = List(
+      Person(x.split(" ")[0], "moharana"),
       Person("ajay", "das"),
       Person("biswojit", "sahu"),
       Person("ramesh","behera")
-    )
+    )*/
     //store fist name in list
     val f=name.map(_.fistname)
 
